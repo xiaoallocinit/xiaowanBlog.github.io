@@ -6,10 +6,10 @@
 [![](https://img.shields.io/github/stars/superZhouDaLu/superzhoudalu.github.io.svg?style=social&label=Star)](https://github.com/superZhouDaLu/superzhoudalu.github.io)
 [![](https://img.shields.io/github/forks/superZhouDaLu/superzhoudalu.github.io.svg?style=social&label=Fork)](https://github.com/superZhouDaLu/superzhoudalu.github.io)
 
-博客的搭建教程修改自 [qiubaiying](https://github.com/qiubaiying/qiubaiying.github.io)
+博客的搭建教程修改自 [qiubaiying](https://xiaoallocinit.github.io/xiaowanBlog.github.io/)
 
 >
-### [查看博客戳这里 👆](https://aigq.me)
+### [查看博客戳这里 👆](https://xiaoallocinit.github.io/xiaowanBlog.github.io/)
 
 >
 ### 支持
@@ -278,10 +278,10 @@ ga_domain: https://aigq.me
 
 ## 致谢
 
-1. 这个模板是从这里 [qiubaiying](https://github.com/qiubaiying/qiubaiying.github.io) fork 的, 感谢这个作者。
+1. 这个模板是从这里 [小豌先生](https://xiaoallocinit.github.io/xiaowanBlog.github.io/) fork 的, 感谢这个作者。
 2. 感谢 Jekyll、Github Pages 和 Bootstrap!
 3. 转载请注明出处，喜欢的话帮忙点个 **Star** 再走呗。
 
 ## License
 
-遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/superZhouDaLu/superzhoudalu.github.io/blob/master/LICENSE)。
+遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://xiaoallocinit.github.io/xiaowanBlog.github.io/blob/master/LICENSE)。
