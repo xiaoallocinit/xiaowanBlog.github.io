@@ -12,4 +12,4 @@ tags:
     - 趋势研究
 ---
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_png/ViaIfpMVXKTQ6fIqIM0V06SndmhMJY0DlibYvovr8xwAd9UmWpABD2NRL28IuuCicvZIuNJerq4hGDtVAo4SFWLbw/640?wx_fmt=png&amp;from=appmsg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_png/ViaIfpMVXKTQ6fIqIM0V06SndmhMJY0DldJBZPdrGuZtVQo5eukCqscgrEBou6O65xFsdibicPMrh2gaVCwiaAO29A/640?wx_fmt=png&amp;from=appmsg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_png/ViaIfpMVXKTQ6fIqIM0V06SndmhMJY0DlmRiavtzCib6olRCZVULZxeUA27LQeCBLAm1Bt7dNrDHDvHHwVDkglbhQ/640?wx_fmt=png&amp;from=appmsg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRy3icqnz3Hyh4nKZTv6qU2OK73sJkPsbSy7OlRwgEpWa5vvfG24VK0dWdLb0FfQ9w4ib22KPdJRDLA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1)（最近群里的小伙伴，星球的朋友们回血爆赚，加入星球的朋友太多了，下周一再次涨价一波，各位先进的也是吃了涨停板。）
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥（最近群里的小伙伴，星球的朋友们回血爆赚，加入星球的朋友太多了，下周一再次涨价一波，各位先进的也是吃了涨停板。）

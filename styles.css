@@ -1,0 +1,41 @@
+/* ... existing code ... */
+.article-item {
+    /* ... existing code ... */
+}
+
+.article-time {
+    font-family: "Apple SD Gothic Neo", sans-serif;
+    font-weight: bold;
+}
+
+.article-tag {
+    background: linear-gradient(90deg, #ff6b6b, #ee0979);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.article-title {
+    font-size: 24px;
+    font-family: "Apple SD Gothic Neo", sans-serif;
+    font-weight: bold;
+}
+
+.article-content {
+    font-size: 24px;
+}
+
+.read-article-btn {
+    background: linear-gradient(90deg, #ff6b6b, #ee0979);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.read-article-btn:hover {
+    transform: scale(1.1);
+}
+/* ... existing code ... */

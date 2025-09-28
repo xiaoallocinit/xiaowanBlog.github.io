@@ -16,7 +16,7 @@ DeepSeek在苹果App Store应用商店美区免费榜排行第六，超越google
 
 **突发新闻：**DeepSeek-R1 飙升至 Arena 排行榜前三名 🐳！目前总体排名第3，与顶级推理模型 o1 持平，同时成本低20倍且开放权重！**亮点：**- 在技术领域排名第一：困难提示、编程、数学- 在风格控制方面并列第一- MIT 许可证
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxcfNMJhkcH532BgftSAnQ8ATWlpxqqciaZuyhEVwxACT3N7xx4jK4nPA/640?wx_fmt=jpeg)
+🔥🔥🔥
 
 为什么上周DeepSeek上了新闻联播，没有爆火？
 
@@ -28,7 +28,7 @@ DeepSeek在苹果App Store应用商店美区免费榜排行第六，超越google
 
 就连同花顺和东方财富的小编也周末加班出了相关题材个股。
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxhwcA9E9A41RYicsSUoLQhv4Nj58GUd6tmOqCf2GaRg0MTmz5U4Kbnibw/640?wx_fmt=jpeg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnx20d29IibdeibNNttRlxeZFRz8yvtxR6sXC9LHKoxia47ZAfCMZlIOZogQ/640?wx_fmt=jpeg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxCIbmfpL7MDe5856qDJ6ZpswCH7JXpXwvCkicGOkib4yzjkNa7wgnbEeQ/640?wx_fmt=jpeg)
+🔥🔥🔥🔥🔥🔥🔥🔥🔥
 明天大概率是大阳线的盘面，高开高走，没有更多的分歧卖盘。
 
 思路一：DeepSeek板块弹性标最核心的唯一一个北交所个股。
@@ -45,4 +45,4 @@ DeepSeek在苹果App Store应用商店美区免费榜排行第六，超越google
 
 一旦节前涨停，春节后有很强概率走出去年信雅达连板预期。
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnx17p0TjxENypAtCtNaxqpVRYD0YaKicpeCQJVhBtxvmKCAf7tcvJHjWA/640?wx_fmt=jpeg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxTvo4rfowT1XL2MgQdoTumOERk1ocF0gxFWqtpXWbn9cSR5cbL1qo6A/640?wx_fmt=jpeg)
+🔥🔥🔥🔥🔥🔥
