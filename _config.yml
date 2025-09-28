@@ -4,22 +4,22 @@ title: 小豌先生的随笔日志
 # 选项卡标题
 SEOTitle: 梵高投研风口 | 小豌先生's Blog
 # 首页背景图片
-header-img: img/site/post-bg-debug.png
+header-img: img/site/post-bg-debug.jpg
 # 邮箱设置
 email: xiao2683@gmail.com
 # 网站介绍
 description: "分享投资笔记、AI与生活随想"
 # 关键词
-keyword: "投资, Swift, iOS, Vue.js, Apple, iPhone, AI, 技术, 生活"
+keyword: "A股投资, 互联网, AI, 技术, 生活"
 # 博客访问链接
-url: "https://xiaoallocinit.github.io/xiaowanBlog.github.io/"
+url: "https://xiaoallocinit.github.io/"
 # baseurl should be empty for user pages or project name for project pages
 baseurl: "/xiaowanBlog.github.io"
 
 # 作者信息
 author:
   name: 小豌先生
-  email: xiao2683@gmail.com
+  email: xiao2683@qq.com
   github: xiaoallocinit
 
 ## 侧边栏设置

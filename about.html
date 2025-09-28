@@ -14,55 +14,30 @@ header-img: "img/site/post-bg-rwd.jpg"
 <!-- Chinese Version -->
 <div class="zh post-container">
 
-    <img src="/img/site/sidebar-avatar.jpg" alt="小豌先生的头像" style="width: 150px; height: 150px; border-radius: 50%; margin: 20px 0;" />
+    <img src="{{ site.baseurl }}/img/site/sidebar-avatar.jpg" alt="小豌先生的头像" style="width: 150px; height: 150px; border-radius: 50%; margin: 20px 0;" />
 
     <!--copied from markdown -->
     <blockquote><p>顺势而为，持续成长<br>
     分享投资笔记、AI与生活随想</p></blockquote>
 
-    <p>你好，我是<strong>小豌先生</strong>，一名技术爱好者和投资学习者。</p>
+    <p>你好，我是<strong>小豌先生</strong>，爱炒股爱生活不爱工作~。</p>
 
-    <p>这里是我的数字花园，我会在这里分享关于投资理财、技术开发、AI应用以及生活感悟的内容。希望通过持续的学习和记录，与志同道合的朋友一起成长。</p>
+    <p>这里是我的数字空间，我会在这里分享关于A股投资、互联网产业圈、AI大爆发事件跟踪。希望通过持续的学习和记录，与志同道合的朋友一起成长。</p>
 
     <h5>技能与兴趣</h5>
     <ul>
-        <li>💰 投资理财：关注价值投资、市场分析</li>
-        <li>💻 技术开发：Swift/iOS、Vue.js、前端技术</li>
+        <li>💰 投资理财：关注A股投资</li>
+        <li>💻 技术开发：互联网圈</li>
         <li>🤖 AI应用：关注人工智能在生活和工作中的应用</li>
         <li>📚 持续学习：读书、思考、实践</li>
     </ul>
 
-    <h5>联系方式</h5>
-    <ul>
-        <li><a href="https://github.com/xiaoallocinit">GitHub</a> - 我的代码仓库</li>
-        <li><a href="mailto:xiao2683@gmail.com">Email</a> - 欢迎交流</li>
-        <li><a href="https://weibo.com/u/5089298519">微博</a> - 日常分享</li>
-        <li><a href="https://www.zhihu.com/people/Zhoudalu">知乎</a> - 深度思考</li>
-    </ul>
+    <h5>联系方式：加我微信号（VanGoghXiao）</h5>
 
     <p>如果你对投资、技术或是生活有什么想法，欢迎与我交流探讨！</p>
 </div>
 
-<!-- English Version -->
-<!-- <div class="en post-container">
-    <blockquote><p>Yet another iOS Developer. <br>
-    Yet another Life-long Student.</p></blockquote>
 
-    <p>Hi, I am <strong>Baiying Qiu</strong>，you can call me <strong>BY</strong>. I am an iOS software engineer and currently working in Xiamen</p>
-
-    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/qiubaiying">Github·BY</a>.</p>
-    
-    <p>I am a sports enthusiast, I like fitness, running and boxing.</p>
-
-    <h5>Talks</h5>
-
-    <ul>
-    <li><a href="https://github.com">GitHub</a></li>
-    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="https://qiubaiying.github.io">BY</a></li>
-    </ul>
-</div> -->
 
 <!-- Handle Language Change -->
 <script type="text/javascript">
@@ -111,19 +86,6 @@ header-img: "img/site/post-bg-rwd.jpg"
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
-<div id="gitalk-container"></div>
-    <script type="text/javascript">
-    var gitalk = new Gitalk({
-    clientID: '{{site.gitalk.clientID}}',
-    clientSecret: '{{site.gitalk.clientSecret}}',
-    repo: '{{site.gitalk.repo}}',
-    owner: '{{site.gitalk.owner}}',
-    admin: ['{{site.gitalk.admin}}'],
-    distractionFreeMode: {{site.gitalk.distractionFreeMode}},
-    id: 'about',
-    });
-    gitalk.render('gitalk-container');
-</script>
 {% endif %}
 <!-- Gitalk end -->
 
