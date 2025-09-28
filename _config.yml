@@ -1,20 +1,26 @@
 ## 网站设置
-# 标题
-title: Blog
+# 站点基本信息
+title: 小豌先生的技术笔记
 # 选项卡标题
-SEOTitle: 梵高投研风口 | 小豌先生‘s Blog
+SEOTitle: 梵高投研风口 | 小豌先生's Blog
 # 首页背景图片
 header-img: img/post-bg-debug.png
 # 邮箱设置
 email: xiao2683@gmail.com
 # 网站介绍
-description: "I guess it comes down to a simple choice:get busy living or get busy dying."
+description: "分享投资笔记、AI与生活随想"
 # 关键词
-keyword: "投资, Swift, iOS, Vue.js, Apple, iPhone"
+keyword: "投资, Swift, iOS, Vue.js, Apple, iPhone, AI, 技术, 生活"
 # 博客访问链接
 url: "https://xiaoallocinit.github.io/xiaowanBlog.github.io/"
-# '/blog' if your blog hosted on 'host/blog'
-baseurl: "https://xiaoallocinit.github.io/xiaowanBlog.github.io/"
+# baseurl should be empty for user pages or project name for project pages
+baseurl: ""
+
+# 作者信息
+author:
+  name: 小豌先生
+  email: xiao2683@gmail.com
+  github: superZhouDaLu
 
 ## 侧边栏设置
 # 是否开启侧边栏 true 开始 false 关闭
