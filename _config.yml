@@ -1,6 +1,6 @@
 ## 网站设置
 # 站点基本信息
-title: 小豌先生的技术笔记
+title: 小豌先生的随笔日志
 # 选项卡标题
 SEOTitle: 梵高投研风口 | 小豌先生's Blog
 # 首页背景图片
@@ -48,12 +48,21 @@ jianshu_username:   56a2c6b6027c
 ## 构建设置
 permalink: pretty
 paginate: 10
+paginate_path: "/page:num/"
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-## Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+## Plugins
+# Jekyll plugins for GitHub Pages compatibility
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Legacy gems support (for older Jekyll versions)
+gems:
+  - jekyll-paginate
 
 ## Markdown settings
 # replace redcarpet to kramdown,
@@ -68,21 +77,6 @@ kramdown:
 # Disqus（https://disqus.com/）
 # disqus_username: superZhoudalu
 
-## Gitalk
-gitalk:
-  #是否开启Gitalk评论
-  enable: true
-  #生成的clientID
-  clientID: bde9d2bff0cd1048efeb
-  #生成的clientSecret
-  clientSecret: 4be7e16501b7e64eb16568815fe5948fc3007ad1
-  #仓库名称
-  repo: xiaowanBlog
-  #github用户名
-  owner: xiaoallocinit
-  admin: xiaoallocinit
-  #是否启用类似FB的阴影遮罩
-  distractionFreeMode: true
 
 ## 统计
 # Baidu Analytics
@@ -103,19 +97,3 @@ featured-condition-size: 0
 chrome-tab-theme-color: "#000000"
 service-worker: true
 
-## 友情链接
-friends: [
-    {
-        title: "帅超",
-        href: "https://github.com/shuaichaoA"
-    },{
-        title: "鸡大婶",
-        href: "https://github.com/ruinszero"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
-    }
-]

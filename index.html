@@ -1,57 +1,52 @@
 ---
-layout: page
-title: "小豌先生的技术笔记"
+layout: home
+title: "小豌先生的随笔日志"
 subtitle: "欢迎来到我的数字花园"
 description: "分享投资笔记、AI与生活随想 - 顺势而为，持续成长"
-header-img: "img/site/home-bg.jpg"
+header-img: "img/site/post-bg-rwd.jpg"
 ---
 
-<div class="apple-blog-container">
-    <!-- Apple Style Hero Section -->
-    <div class="apple-hero-section">
-        <h1 class="apple-hero-title">{{ site.title }}</h1>
-        <h2 class="apple-hero-subtitle">{{ page.subtitle }}</h2>
-        <p class="apple-hero-description">{{ page.description }}</p>
-    </div>
+<div class="simple-blog-container">
+    {% assign posts_by_year_month = site.posts | group_by_exp: "post", "post.date | date: '%Y年%m月'" %}
     
-    <div class="apple-posts-grid">
-        {% for post in paginator.posts %}
-        <article class="apple-post-card" data-href="{{ post.url | prepend: site.baseurl }}">
-            <div class="apple-card-content">
-                <div class="apple-post-meta">
-                    <span class="apple-post-date">{{ post.date | date: "%m月%d日" }}</span>
-                    <span class="apple-post-author">{{ post.author | default: site.author.name }}</span>
-                </div>
-                
-                <h2 class="apple-post-title">{{ post.title }}</h2>
-                
-                {% if post.subtitle %}
-                <h3 class="apple-post-subtitle">{{ post.subtitle }}</h3>
-                {% endif %}
-                
-                <div class="apple-post-excerpt">
-                    {% if post.excerpt %}
-                        {{ post.excerpt | strip_html | truncate: 150 }}
-                    {% else %}
-                        {{ post.content | strip_html | truncate: 150 }}
+    {% for year_month in posts_by_year_month %}
+    <section class="month-section">
+        <h2 class="month-title">{{ year_month.name }}</h2>
+        
+        <div class="posts-grid">
+            {% for post in year_month.items %}
+            <article class="simple-post-card" onclick="location.href='{{ post.url | prepend: site.baseurl }}'">
+                <div class="card-content">
+                    <div class="post-meta">
+                        <span class="post-date">{{ post.date | date: "%m.%d" }}</span>
+                        {% if post.tags.size > 0 %}
+                        <span class="post-category">{{ post.tags[0] }}</span>
+                        {% endif %}
+                    </div>
+                    
+                    <h3 class="post-title">{{ post.title }}</h3>
+                    
+                    {% if post.subtitle %}
+                    <p class="post-subtitle">{{ post.subtitle }}</p>
                     {% endif %}
+                    
+                    <div class="post-excerpt">
+                        {% if post.excerpt %}
+                            {{ post.excerpt | strip_html | truncate: 100 }}
+                        {% else %}
+                            {{ post.content | strip_html | truncate: 100 }}
+                        {% endif %}
+                    </div>
                 </div>
                 
-                {% if post.tags.size > 0 %}
-                <div class="apple-post-tags">
-                    {% for tag in post.tags %}
-                        <a href="{{ site.baseurl }}/tags/#{{ tag }}" class="apple-tag" onclick="event.stopPropagation()">{{ tag }}</a>
-                    {% endfor %}
+                <div class="card-footer">
+                    <span class="read-more">阅读文章 →</span>
                 </div>
-                {% endif %}
-                
-                <a href="{{ post.url | prepend: site.baseurl }}" class="apple-read-more" onclick="event.stopPropagation()">
-                    阅读全文
-                </a>
-            </div>
-        </article>
-        {% endfor %}
-    </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
 </div>
 
 <!-- Apple Style Pager -->

@@ -146,7 +146,7 @@ CLAUDE.md - 个人 GitHub 博客项目指南
 ### 📦 package.json 更新
 
 #### 1. 项目信息更新
-- **项目名称** - xiaowanBlog → 小豌先生的技术笔记
+- **项目名称** - xiaowanBlog → 小豌先生的随笔日志
 - **作者信息** - 更新为正确的用户名和邮箱
 - **版本号** - 升级到 2.0.0 (重大更新)
 - **仓库地址** - 更新为当前的GitHub仓库
@@ -286,7 +286,7 @@ text
 
 yaml
 # 站点基本信息
-title: 您的博客标题 (e.g., "小豌先生的技术笔记")
+title: 您的博客标题 (e.g., "小豌先生的随笔日志")
 description: 您博客的简短描述 (e.g., "分享投资笔记、AI与生活随想")
 baseurl: "" # 如果仓库名是 `用户名.github.io`，则保持为空。如果是项目页，则填仓库名。
 url: "https://xiaoallocinit.github.io/xiaowanBlog.github.io/" # 您的博客最终访问地址

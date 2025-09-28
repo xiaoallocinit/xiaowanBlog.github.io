@@ -1,4 +1,4 @@
-# 小豌先生的技术笔记
+# 小豌先生的随笔日志
 
 > 顺势而为，持续成长  
 > 分享投资笔记、AI与生活随想
@@ -88,22 +88,33 @@ npm --version
 ```
 
 ### 本地运行
+
+#### 快速启动
 ```bash
 # 1. 克隆项目
 git clone https://github.com/xiaoallocinit/xiaowanBlog.git
 cd xiaowanBlog
 
-# 2. 安装依赖
-bundle install
-npm install
-
-# 3. 启动开发服务器
-npm run dev
-# 或者
-npm start
-
-# 4. 访问 http://localhost:4000
+# 2. 运行启动脚本（推荐）
+./start.sh
 ```
+
+#### 手动启动
+```bash
+# 1. 安装Jekyll依赖
+bundle install
+
+# 2. 启动开发服务器
+bundle exec jekyll serve --livereload
+
+# 3. 访问 http://localhost:4000
+```
+
+#### 故障排除
+如果遇到 "Could not locate Gemfile" 错误：
+1. 确保在项目根目录下运行命令
+2. 确保已创建 Gemfile（已包含在项目中）
+3. 运行 `bundle install` 安装依赖
 
 ### 构建部署
 ```bash

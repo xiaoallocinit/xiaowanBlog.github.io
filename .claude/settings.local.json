@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:xiaoallocinit.github.io)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(chmod:*)",
+      "Bash(bundle install:*)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

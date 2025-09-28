@@ -64,12 +64,24 @@ body {
     color: #0071e3 !important;
 }
 
-/* 主容器样式 */
+/* 主容器样式 - 确保覆盖Bootstrap样式 */
 .apple-blog-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    position: relative !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* 确保覆盖Bootstrap容器样式 */
+body .apple-blog-container,
+.container .apple-blog-container,
+.postlist-container .apple-blog-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    width: 100% !important;
 }
 
 /* 添加苹果风格的页面标题区域 */
@@ -104,12 +116,27 @@ body {
     line-height: 1.5;
 }
 
-/* 文章卡片网格 */
+/* 文章卡片网格 - 强制覆盖Bootstrap样式 */
 .apple-posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 24px;
-    margin-top: 40px;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    gap: 24px !important;
+    margin-top: 40px !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+/* 确保在任何容器内都能正常显示 */
+.container .apple-posts-grid,
+.postlist-container .apple-posts-grid,
+body .apple-posts-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    gap: 24px !important;
+    margin-top: 40px !important;
+    width: 100% !important;
 }
 
 /* 单个文章卡片 */
