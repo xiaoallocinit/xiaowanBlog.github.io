@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<!-- Apple Style Home Page with Background -->
+<!-- 苹果风格首页背景英雄区 -->
 {% if page.header-img %}
-<div class="apple-home-hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{{ site.baseurl }}/{{ page.header-img }}')">
+<div class="apple-home-hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('{% site.baseurl %}/{{ page.header-img }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="apple-home-hero-content">
         <h1 class="apple-home-title">{{ page.title }}</h1>
         <h2 class="apple-home-subtitle">{{ page.subtitle }}</h2>
