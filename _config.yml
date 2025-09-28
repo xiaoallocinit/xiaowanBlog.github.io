@@ -4,7 +4,7 @@ title: 小豌先生的技术笔记
 # 选项卡标题
 SEOTitle: 梵高投研风口 | 小豌先生's Blog
 # 首页背景图片
-header-img: img/post-bg-debug.png
+header-img: img/site/post-bg-debug.png
 # 邮箱设置
 email: xiao2683@gmail.com
 # 网站介绍
@@ -20,7 +20,7 @@ baseurl: ""
 author:
   name: 小豌先生
   email: xiao2683@gmail.com
-  github: superZhouDaLu
+  github: xiaoallocinit
 
 ## 侧边栏设置
 # 是否开启侧边栏 true 开始 false 关闭
@@ -28,7 +28,7 @@ sidebar: true
 # 侧边栏描述语句
 sidebar-about-description: "顺势"
 # 侧边栏头像
-sidebar-avatar: /img/sidebar-avatar.jpg
+sidebar-avatar: /img/site/sidebar-avatar.jpg
 
 ## 社交网站设置
 RSS: false
@@ -37,7 +37,7 @@ weibo_username:     5089298519
 # 知乎个人页面 填写用户名
 zhihu_username:     Zhoudalu
 # GitHub个人页面 填写用户名
-github_username:    superZhouDaLu
+github_username:    xiaoallocinit
 # facebook个人页面 填写用户名
 #facebook_username:  100024292873470
 # 简书个人页面截取用户编号 与微博同理
@@ -77,10 +77,10 @@ gitalk:
   #生成的clientSecret
   clientSecret: 4be7e16501b7e64eb16568815fe5948fc3007ad1
   #仓库名称
-  repo: superzhoudalu.github.io
+  repo: xiaowanBlog
   #github用户名
-  owner: superZhouDaLu
-  admin: superZhouDaLu
+  owner: xiaoallocinit
+  admin: xiaoallocinit
   #是否启用类似FB的阴影遮罩
   distractionFreeMode: true
 

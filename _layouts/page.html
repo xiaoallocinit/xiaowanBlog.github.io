@@ -98,6 +98,17 @@ layout: default
                 </section>
                 {% endif %}
 
+                <!-- Quick Search -->
+                <section class="visible-md visible-lg">
+                    <hr><h5>快速搜索</h5>
+                    <div class="quick-search">
+                        <input type="text" id="quick-search-input" placeholder="搜索文章..." style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px;">
+                        <a href="{{'/search/' | prepend: site.baseurl }}" class="btn btn-default btn-sm" style="width: 100%;">
+                            <i class="fa fa-search"></i> 高级搜索
+                        </a>
+                    </div>
+                </section>
+
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
                     <hr><h5><a href="{{'/about/' | prepend: site.baseurl }}">关于我</a></h5>
@@ -204,3 +215,20 @@ layout: default
         {% endif %}
 	</div>
 </div>
+
+<!-- Quick Search Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const quickSearchInput = document.getElementById('quick-search-input');
+    if (quickSearchInput) {
+        quickSearchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = this.value.trim();
+                if (query) {
+                    window.location.href = '{{ site.baseurl }}/search/?q=' + encodeURIComponent(query);
+                }
+            }
+        });
+    }
+});
+</script>
