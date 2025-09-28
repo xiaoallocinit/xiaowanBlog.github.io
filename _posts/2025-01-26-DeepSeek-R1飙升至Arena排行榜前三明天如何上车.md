@@ -1,0 +1,48 @@
+---
+layout: post
+title: "DeepSeek-R1 飙升至 Arena 排行榜前三，明天如何上车？"
+subtitle: ""
+date: 2025-01-26
+author: 梵高先生
+header-img: img/posts/2025/01/investment-bg.jpg
+catalog: true
+tags:
+    - 投资
+    - 市场分析
+    - 趋势研究
+---
+
+DeepSeek在苹果App Store应用商店美区免费榜排行第六，超越google Gemini、Microsoft Copilot等美国生成式AI产品。
+
+**突发新闻：**DeepSeek-R1 飙升至 Arena 排行榜前三名 🐳！目前总体排名第3，与顶级推理模型 o1 持平，同时成本低20倍且开放权重！**亮点：**- 在技术领域排名第一：困难提示、编程、数学- 在风格控制方面并列第一- MIT 许可证
+
+![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxcfNMJhkcH532BgftSAnQ8ATWlpxqqciaZuyhEVwxACT3N7xx4jK4nPA/640?wx_fmt=jpeg)
+
+为什么上周DeepSeek上了新闻联播，没有爆火？
+
+为什么24号晚上DeepSeek的R1发布后，就一夜之间爆火？
+
+因为海内外程序员圈子评测刷爆了，这个不是单个人的吹捧，而是实实在在的牛逼。
+
+然后我们可以看到，周末所有群都在议论DeepSeek。
+
+就连同花顺和东方财富的小编也周末加班出了相关题材个股。
+
+![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxhwcA9E9A41RYicsSUoLQhv4Nj58GUd6tmOqCf2GaRg0MTmz5U4Kbnibw/640?wx_fmt=jpeg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnx20d29IibdeibNNttRlxeZFRz8yvtxR6sXC9LHKoxia47ZAfCMZlIOZogQ/640?wx_fmt=jpeg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxCIbmfpL7MDe5856qDJ6ZpswCH7JXpXwvCkicGOkib4yzjkNa7wgnbEeQ/640?wx_fmt=jpeg)
+明天大概率是大阳线的盘面，高开高走，没有更多的分歧卖盘。
+
+思路一：DeepSeek板块弹性标最核心的唯一一个北交所个股。
+
+推荐：并行科技
+
+（行情板块强势，肯定要快速一波吃到30cm，好比9月底所有个股涨停，那你肯定要干弹性最大的20或者30）
+
+思路二：DeepSeek板块的潜在连板票。
+
+推荐：竞业达
+
+这个股周末出了业绩，同比增长很强，在整个AI板块业绩爆亏的场景之下，确实稀缺。业绩超预期，又是AI教育属性，北京的人工智能教育改革。同时前期对接的是百度的AI模型，目前在接入DeepSeek的模型，降低成本，对于教育模型来说，DeepSeek有天然的优势。
+
+一旦节前涨停，春节后有很强概率走出去年信雅达连板预期。
+
+![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnx17p0TjxENypAtCtNaxqpVRYD0YaKicpeCQJVhBtxvmKCAf7tcvJHjWA/640?wx_fmt=jpeg)![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/https://mmbiz.qpic.cn/sz_mmbiz_jpg/ViaIfpMVXKTRCjdtlTv1DLRwE2HMuASnxTvo4rfowT1XL2MgQdoTumOERk1ocF0gxFWqtpXWbn9cSR5cbL1qo6A/640?wx_fmt=jpeg)

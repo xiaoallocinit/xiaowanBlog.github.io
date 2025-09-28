@@ -24,7 +24,7 @@ author:
 
 ## 侧边栏设置
 # 是否开启侧边栏 true 开始 false 关闭
-sidebar: true
+sidebar: false
 # 侧边栏描述语句
 sidebar-about-description: "顺势"
 # 侧边栏头像
