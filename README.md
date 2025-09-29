@@ -208,9 +208,6 @@ xiaowanBlog/
 如果你对投资、技术或是生活有什么想法，欢迎与我交流探讨！
 
 - **GitHub**: [@xiaoallocinit](https://github.com/xiaoallocinit)
-- **Email**: xiao2683@gmail.com
-- **微博**: [@小豌先生](https://weibo.com/u/5089298519)
-- **知乎**: [@Zhoudalu](https://www.zhihu.com/people/Zhoudalu)
 
 ---
 
