@@ -6,7 +6,10 @@
       "Bash(chmod:*)",
       "Bash(bundle install:*)",
       "Bash(bundle exec jekyll build:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(ruby:*)",
+      "Bash(bundle exec jekyll:*)"
     ],
     "deny": [],
     "ask": []

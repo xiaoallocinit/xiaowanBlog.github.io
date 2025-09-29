@@ -2,7 +2,7 @@
 layout: page
 title: "关于我"
 description: "认识小豌先生"
-header-img: "img/site/post-bg-rwd.jpg"
+header-img: "img/site/about-page-bg.jpg"
 ---
 
 <!-- Language Selector -->
@@ -12,29 +12,107 @@ header-img: "img/site/post-bg-rwd.jpg"
 </select> -->
 
 <!-- Chinese Version -->
-<div class="zh post-container">
+<div class="zh post-container cyber-about-container">
+    
+    <!-- 科技风格的个人信息卡片 -->
+    <div class="cyber-profile-card">
+        <div class="cyber-avatar-wrapper">
+            <div class="cyber-avatar-ring"></div>
+            <img src="{{ site.baseurl }}/img/site/sidebar-avatar.jpg" alt="小豌先生的头像" class="cyber-avatar" />
+            <div class="cyber-status-indicator"></div>
+        </div>
+        
+        <div class="cyber-profile-info">
+            <h1 class="cyber-name">小豌先生</h1>
+            <div class="cyber-title">数字投资探索者</div>
+            <div class="cyber-status">● ONLINE</div>
+        </div>
+    </div>
 
-    <img src="{{ site.baseurl }}/img/site/sidebar-avatar.jpg" alt="小豌先生的头像" style="width: 150px; height: 150px; border-radius: 50%; margin: 20px 0;" />
+    <!-- 酷炫的引言区 -->
+    <div class="cyber-quote-section">
+        <div class="cyber-quote-lines">
+            <div class="cyber-line"></div>
+            <div class="cyber-line"></div>
+            <div class="cyber-line"></div>
+        </div>
+        <blockquote class="cyber-quote">
+            <p class="cyber-quote-text">顺势而为，持续成长</p>
+            <p class="cyber-quote-sub">分享投资笔记、AI与生活随想</p>
+        </blockquote>
+    </div>
 
-    <!--copied from markdown -->
-    <blockquote><p>顺势而为，持续成长<br>
-    分享投资笔记、AI与生活随想</p></blockquote>
+    <!-- 3D信息面板 -->
+    <div class="cyber-info-panels">
+        <div class="cyber-panel">
+            <div class="cyber-panel-header">
+                <span class="cyber-panel-icon">👋</span>
+                <h3>关于我</h3>
+            </div>
+            <p>你好，我是<strong>小豌先生</strong>，爱炒股爱生活不爱工作~。</p>
+            <p>这里是我的数字空间，我会在这里分享关于A股投资、互联网产业圈、AI大爆发事件跟踪。希望通过持续的学习和记录，与志同道合的朋友一起成长。</p>
+        </div>
 
-    <p>你好，我是<strong>小豌先生</strong>，爱炒股爱生活不爱工作~。</p>
+        <div class="cyber-panel">
+            <div class="cyber-panel-header">
+                <span class="cyber-panel-icon">⚡</span>
+                <h3>技能与兴趣</h3>
+            </div>
+            <div class="cyber-skills-grid">
+                <div class="cyber-skill-item">
+                    <div class="cyber-skill-icon">💰</div>
+                    <div class="cyber-skill-content">
+                        <h4>投资理财</h4>
+                        <p>关注A股投资</p>
+                    </div>
+                </div>
+                <div class="cyber-skill-item">
+                    <div class="cyber-skill-icon">💻</div>
+                    <div class="cyber-skill-content">
+                        <h4>技术开发</h4>
+                        <p>互联网圈</p>
+                    </div>
+                </div>
+                <div class="cyber-skill-item">
+                    <div class="cyber-skill-icon">🤖</div>
+                    <div class="cyber-skill-content">
+                        <h4>AI应用</h4>
+                        <p>关注人工智能在生活和工作中的应用</p>
+                    </div>
+                </div>
+                <div class="cyber-skill-item">
+                    <div class="cyber-skill-icon">📚</div>
+                    <div class="cyber-skill-content">
+                        <h4>持续学习</h4>
+                        <p>读书、思考、实践</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <p>这里是我的数字空间，我会在这里分享关于A股投资、互联网产业圈、AI大爆发事件跟踪。希望通过持续的学习和记录，与志同道合的朋友一起成长。</p>
-
-    <h5>技能与兴趣</h5>
-    <ul>
-        <li>💰 投资理财：关注A股投资</li>
-        <li>💻 技术开发：互联网圈</li>
-        <li>🤖 AI应用：关注人工智能在生活和工作中的应用</li>
-        <li>📚 持续学习：读书、思考、实践</li>
-    </ul>
-
-    <h5>联系方式：加我微信号（VanGoghXiao）</h5>
-
-    <p>如果你对投资、技术或是生活有什么想法，欢迎与我交流探讨！</p>
+        <div class="cyber-panel">
+            <div class="cyber-panel-header">
+                <span class="cyber-panel-icon">📡</span>
+                <h3>联系方式</h3>
+            </div>
+            <div class="cyber-contact-section">
+                <p>加我微信号：<span class="cyber-wechat-id">VanGoghXiao</span></p>
+                <p>如果你对投资、技术或是生活有什么想法，欢迎与我交流探讨！</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 科技背景装饰 -->
+    <div class="cyber-bg-effects">
+        <div class="cyber-grid"></div>
+        <div class="cyber-particles">
+            <div class="cyber-particle"></div>
+            <div class="cyber-particle"></div>
+            <div class="cyber-particle"></div>
+            <div class="cyber-particle"></div>
+            <div class="cyber-particle"></div>
+        </div>
+    </div>
 </div>
 
 
@@ -88,6 +166,456 @@ header-img: "img/site/post-bg-rwd.jpg"
 
 {% endif %}
 <!-- Gitalk end -->
+
+<!-- 科技金属暗黑风格样式 -->
+<style>
+/* 科技金属暗黑风格主题 */
+.cyber-about-container {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    color: #e0e6ed;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+}
+
+/* 个人信息卡片 */
+.cyber-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 40px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.2),
+        inset 0 0 30px rgba(0, 255, 255, 0.1);
+    animation: cyber-glow 3s ease-in-out infinite alternate;
+    transform: perspective(1000px) rotateX(5deg);
+    transition: all 0.3s ease;
+}
+
+.cyber-profile-card:hover {
+    transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+    box-shadow: 
+        0 20px 40px rgba(0, 255, 255, 0.3),
+        inset 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* 头像区域 */
+.cyber-avatar-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.cyber-avatar-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 170px;
+    height: 170px;
+    border: 3px solid transparent;
+    border-top: 3px solid #00ffff;
+    border-right: 3px solid #ff00ff;
+    border-radius: 50%;
+    animation: cyber-rotate 4s linear infinite;
+}
+
+.cyber-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cyber-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.8),
+        inset 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.cyber-status-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: #00ff00;
+    border: 3px solid #0a0a0a;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff00;
+    animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+/* 个人信息文字 */
+.cyber-profile-info h1.cyber-name {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    animation: cyber-text-glow 3s ease-in-out infinite alternate;
+}
+
+.cyber-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.cyber-status {
+    font-size: 0.9rem;
+    color: #00ff00;
+    font-weight: 700;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* 引言区域 */
+.cyber-quote-section {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 40px;
+    background: rgba(255, 0, 255, 0.05);
+    border-left: 5px solid #ff00ff;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.cyber-quote-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.cyber-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+    height: 1px;
+    width: 100%;
+    animation: cyber-scan 3s linear infinite;
+}
+
+.cyber-line:nth-child(1) { top: 20%; animation-delay: 0s; }
+.cyber-line:nth-child(2) { top: 50%; animation-delay: 1s; }
+.cyber-line:nth-child(3) { top: 80%; animation-delay: 2s; }
+
+.cyber-quote-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.cyber-quote-sub {
+    font-size: 1.2rem;
+    color: #ff00ff;
+    font-weight: 500;
+}
+
+/* 信息面板 */
+.cyber-info-panels {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+}
+
+.cyber-panel {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    transform: perspective(1000px) rotateY(5deg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: left 0.7s ease;
+}
+
+.cyber-panel:hover::before {
+    left: 100%;
+}
+
+.cyber-panel:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-5px);
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+}
+
+.cyber-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+}
+
+.cyber-panel-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px #00ffff);
+}
+
+.cyber-panel h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00ffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cyber-panel p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e6ed;
+    margin-bottom: 15px;
+}
+
+.cyber-panel strong {
+    color: #ffff00;
+    font-weight: 700;
+    text-shadow: 0 0 5px #ffff00;
+}
+
+/* 技能网格 */
+.cyber-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.cyber-skill-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cyber-skill-item:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+}
+
+.cyber-skill-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px #00ffff);
+}
+
+.cyber-skill-content h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.cyber-skill-content p {
+    font-size: 0.9rem;
+    color: #b0b6bd;
+    margin: 0;
+}
+
+/* 联系方式 */
+.cyber-wechat-id {
+    color: #00ff00;
+    font-weight: 700;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    text-shadow: 0 0 5px #00ff00;
+}
+
+/* 背景效果 */
+.cyber-bg-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: cyber-grid-move 20s linear infinite;
+}
+
+.cyber-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cyber-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ffff;
+    animation: cyber-float 6s ease-in-out infinite;
+}
+
+.cyber-particle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.cyber-particle:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.cyber-particle:nth-child(3) {
+    top: 80%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.cyber-particle:nth-child(4) {
+    top: 30%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.cyber-particle:nth-child(5) {
+    top: 70%;
+    left: 50%;
+    animation-delay: 3s;
+}
+
+/* 动画效果 */
+@keyframes cyber-glow {
+    0% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), inset 0 0 30px rgba(0, 255, 255, 0.1); }
+    100% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.4), inset 0 0 50px rgba(0, 255, 255, 0.2); }
+}
+
+@keyframes cyber-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes cyber-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@keyframes cyber-text-glow {
+    0% { text-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+    100% { text-shadow: 0 0 30px rgba(0, 255, 255, 0.8); }
+}
+
+@keyframes cyber-scan {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes cyber-grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+@keyframes cyber-float {
+    0%, 100% { transform: translateY(0px); opacity: 0.7; }
+    50% { transform: translateY(-20px); opacity: 1; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .cyber-about-container {
+        padding: 20px 15px;
+    }
+    
+    .cyber-profile-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+    
+    .cyber-profile-info h1.cyber-name {
+        font-size: 2.2rem;
+    }
+    
+    .cyber-quote-text {
+        font-size: 1.5rem;
+    }
+    
+    .cyber-skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cyber-panel {
+        padding: 20px;
+        transform: none;
+    }
+    
+    .cyber-panel:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* 暗色主题覆盖 */
+.cyber-about-container .post-container {
+    background: transparent;
+    color: #e0e6ed;
+}
+
+.cyber-about-container blockquote {
+    background: transparent;
+    border: none;
+}
+</style>
 
  <!-- disqus 评论框 start  -->
 {% if site.disqus.enable %}

@@ -1,0 +1,454 @@
+/* Apple Style Navigation Bar */
+
+/* 重置和基础样式 */
+.apple-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.0);
+    
+    /* 科技风样式 - 与主页保持一致 */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* 边框和阴影 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 滚动时的增强效果 */
+.apple-navbar.apple-navbar-scrolled {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 1) 100%);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 隐藏导航栏效果（可选） */
+.apple-navbar.apple-navbar-hidden {
+    transform: translateY(-100%);
+}
+
+/* 导航容器 */
+.apple-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* 品牌标志 */
+.apple-nav-brand {
+    flex-shrink: 0;
+}
+
+.apple-brand-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.apple-brand-link:hover {
+    transform: scale(1.02);
+}
+
+.apple-brand-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f;
+    letter-spacing: -0.01em;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    transition: color 0.2s ease;
+}
+
+.apple-brand-link:hover .apple-brand-text {
+    color: #0071e3;
+}
+
+/* 导航菜单 */
+.apple-nav-menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.apple-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.apple-nav-item {
+    position: relative;
+}
+
+.apple-nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1d1d1f;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+/* 悬停效果 */
+.apple-nav-link:hover {
+    color: #0071e3;
+    background: rgba(0, 113, 227, 0.1);
+    transform: translateY(-1px);
+}
+
+/* 激活状态 */
+.apple-nav-link:active {
+    transform: translateY(0);
+    background: rgba(0, 113, 227, 0.15);
+}
+
+/* 当前页面指示器 */
+.apple-nav-link.active {
+    color: #0071e3;
+    background: rgba(0, 113, 227, 0.1);
+}
+
+/* 下拉菜单样式 */
+.apple-nav-dropdown {
+    position: relative;
+}
+
+.apple-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.apple-dropdown-arrow {
+    font-size: 12px;
+    font-style: normal;
+    transition: transform 0.3s ease;
+    color: #6b7280;
+}
+
+.apple-nav-dropdown:hover .apple-dropdown-arrow,
+.apple-nav-dropdown.active .apple-dropdown-arrow {
+    transform: rotate(180deg);
+    color: #0071e3;
+}
+
+.apple-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 280px;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1000;
+    margin-top: 8px;
+}
+
+.apple-nav-dropdown:hover .apple-dropdown-menu,
+.apple-nav-dropdown.active .apple-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.apple-dropdown-content {
+    padding: 16px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.apple-dropdown-year {
+    margin-bottom: 16px;
+}
+
+.apple-dropdown-year:last-child {
+    margin-bottom: 0;
+}
+
+.apple-year-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: rgba(0, 113, 227, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #0071e3;
+}
+
+.apple-month-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.apple-month-item {
+    margin: 0;
+}
+
+.apple-month-link {
+    display: block;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.apple-month-link:hover {
+    background: rgba(0, 113, 227, 0.1);
+    color: #0071e3;
+    transform: translateY(-1px);
+}
+
+.apple-month-link .month-count {
+    font-size: 12px;
+    color: #6b7280;
+    margin-left: 4px;
+}
+
+.apple-month-link:hover .month-count {
+    color: #0071e3;
+}
+
+/* 移动端切换按钮 */
+.apple-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.apple-toggle-line {
+    width: 100%;
+    height: 2px;
+    background: #1d1d1f;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    transform-origin: center;
+}
+
+.apple-toggle-active .apple-toggle-line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.apple-toggle-active .apple-toggle-line:nth-child(2) {
+    opacity: 0;
+}
+
+.apple-toggle-active .apple-toggle-line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* 确保页面内容不被导航栏遮挡 */
+body {
+    padding-top: 60px;
+}
+
+.apple-nav-body-lock {
+    overflow: hidden;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    /* 移动端显示切换按钮 */
+    .apple-mobile-toggle {
+        display: flex;
+    }
+    
+    /* 移动端菜单样式 */
+    .apple-nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 9998;
+    }
+    
+    .apple-nav-menu-open {
+        transform: translateX(0);
+    }
+    
+    .apple-nav-list {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .apple-nav-item {
+        width: 80%;
+        text-align: center;
+    }
+    
+    .apple-nav-link {
+        display: block;
+        padding: 15px;
+        font-size: 18px;
+        width: 100%;
+    }
+    
+    .apple-nav-link:hover {
+        background: rgba(0, 113, 227, 0.1);
+        transform: scale(1.02);
+        box-shadow: 0 4px 16px rgba(0, 113, 227, 0.15);
+    }
+    
+    /* 减少容器边距 */
+    .apple-nav-container {
+        padding: 0 16px;
+    }
+    
+    body {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .apple-nav-container {
+        padding: 0 12px;
+    }
+    
+    .apple-brand-text {
+        font-size: 18px;
+    }
+    
+    .apple-nav-menu {
+        padding-top: 40px;
+    }
+    
+    .apple-nav-link {
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    .apple-navbar {
+        background: rgba(28, 28, 30, 0.8);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .apple-navbar.apple-navbar-scrolled {
+        background: rgba(28, 28, 30, 0.95);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .apple-brand-text,
+    .apple-nav-link {
+        color: #f5f5f7;
+    }
+    
+    .apple-nav-link:hover {
+        color: #0a84ff;
+        background: rgba(10, 132, 255, 0.1);
+    }
+    
+    .apple-toggle-line {
+        background: #f5f5f7;
+    }
+    
+    @media (max-width: 768px) {
+        .apple-nav-menu {
+            background: rgba(28, 28, 30, 0.95);
+        }
+        
+        .apple-nav-link {
+            background: rgba(44, 44, 46, 0.7);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: #f5f5f7;
+        }
+        
+        .apple-nav-link:hover {
+            background: rgba(10, 132, 255, 0.1);
+        }
+    }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    .apple-navbar {
+        background: rgba(255, 255, 255, 1);
+        border-bottom: 2px solid #000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .apple-nav-link {
+        border: 1px solid transparent;
+    }
+    
+    .apple-nav-link:hover,
+    .apple-nav-link:focus {
+        border-color: #0071e3;
+        outline: 2px solid #0071e3;
+        outline-offset: 2px;
+    }
+}
+
+/* 减少动画效果（用户偏好） */
+@media (prefers-reduced-motion: reduce) {
+    .apple-navbar,
+    .apple-nav-link,
+    .apple-brand-link,
+    .apple-toggle-line,
+    .apple-nav-menu {
+        transition: none;
+    }
+    
+    .apple-nav-link:hover {
+        transform: none;
+    }
+    
+    .apple-brand-link:hover {
+        transform: none;
+    }
+}

@@ -1,68 +1,645 @@
 ---
 layout: home
-title: "小豌先生的随笔日志"
+title: "梵高投研"
 subtitle: "欢迎来到我的数字花园"
 description: "分享投资笔记、AI与生活随想 - 顺势而为，持续成长"
 header-img: "img/site/post-bg-rwd.jpg"
 ---
 
-<div class="simple-blog-container">
-    {% assign posts_by_year_month = site.posts | group_by_exp: "post", "post.date | date: '%Y年%m月'" %}
-    
-    {% for year_month in posts_by_year_month %}
-    <section class="month-section">
-        <h2 class="month-title">{{ year_month.name }}</h2>
-        
-        <div class="posts-grid">
-            {% for post in year_month.items %}
-            <article class="simple-post-card" onclick="location.href='{{ post.url | prepend: site.baseurl }}'">
-                <div class="card-content">
-                    <div class="post-meta">
-                        <span class="post-date">{{ post.date | date: "%m.%d" }}</span>
-                        {% if post.tags.size > 0 %}
-                        <span class="post-category">{{ post.tags[0] }}</span>
-                        {% endif %}
-                    </div>
-                    
-                    <h3 class="post-title">{{ post.title }}</h3>
-                    
-                    {% if post.subtitle %}
-                    <p class="post-subtitle">{{ post.subtitle }}</p>
-                    {% endif %}
-                    
-                    <div class="post-excerpt">
-                        {% if post.excerpt %}
-                            {{ post.excerpt | strip_html | truncate: 100 }}
-                        {% else %}
-                            {{ post.content | strip_html | truncate: 100 }}
-                        {% endif %}
-                    </div>
-                </div>
-                
-                <div class="card-footer">
-                    <span class="read-more">阅读文章 →</span>
-                </div>
-            </article>
-            {% endfor %}
+<div class="cyber-home-container">
+    <!-- 科技风格个人信息卡片模块 -->
+    <div class="cyber-home-profile">
+        <div class="cyber-profile-card-compact">
+            <div class="cyber-avatar-wrapper-small">
+                <div class="cyber-avatar-ring-small"></div>
+                <img src="{{ site.baseurl }}/img/site/sidebar-avatar.jpg" alt="小豌先生的头像" class="cyber-avatar-small" />
+                <div class="cyber-status-indicator-small"></div>
+            </div>
+            
+            <div class="cyber-profile-info-compact">
+                <h2 class="cyber-name-compact">小豌先生</h2>
+                <div class="cyber-title-compact">数字投资探索者</div>
+                <div class="cyber-status-compact">● ONLINE</div>
+            </div>
         </div>
-    </section>
-    {% endfor %}
+    </div>
+
+    <!-- 文章内容区域 -->
+    <div class="cyber-blog-content">
+        {% assign posts_by_year_month = site.posts | group_by_exp: "post", "post.date | date: '%Y年%m月'" %}
+        
+        {% for year_month in posts_by_year_month %}
+        <section class="cyber-month-section" data-year-month="{{ year_month.name }}">
+            <div class="cyber-month-header">
+                <h2 class="cyber-month-title">{{ year_month.name }}</h2>
+                {% if year_month.items.size > 6 %}
+                <a href="{{ site.baseurl }}/archive-simple/?year={{ year_month.items[0].date | date: '%Y' }}&month={{ year_month.items[0].date | date: '%m' | plus: 0 }}" class="cyber-view-all-button">
+                    查看全部 ({{ year_month.items.size }})
+                </a>
+                {% endif %}
+            </div>
+            
+            <div class="cyber-posts-grid">
+                {% assign display_limit = 6 %}
+                {% for post in year_month.items limit: display_limit %}
+                <article class="cyber-post-card" onclick="location.href='{{ post.url | prepend: site.baseurl }}'">
+                    <div class="cyber-card-glow"></div>
+                    <div class="cyber-card-content">
+                        <div class="cyber-post-meta">
+                            <span class="cyber-post-date">{{ post.date | date: "%m.%d" }}</span>
+                            {% if post.tags.size > 0 %}
+                            <span class="cyber-post-category">{{ post.tags[0] }}</span>
+                            {% endif %}
+                        </div>
+                        
+                        <h3 class="cyber-post-title">{{ post.title }}</h3>
+                        
+                        {% if post.subtitle %}
+                        <p class="cyber-post-subtitle">{{ post.subtitle }}</p>
+                        {% endif %}
+                        
+                        <div class="cyber-post-excerpt">
+                            {% if post.excerpt %}
+                                {{ post.excerpt | strip_html | truncate: 100 }}
+                            {% else %}
+                                {{ post.content | strip_html | truncate: 100 }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="cyber-card-footer">
+                        <span class="cyber-read-more">阅读文章 →</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            
+            {% if year_month.items.size > 6 %}
+            <div class="cyber-month-footer">
+                <a href="{{ site.baseurl }}/archive-simple/?year={{ year_month.items[0].date | date: '%Y' }}&month={{ year_month.items[0].date | date: '%m' | plus: 0 }}" class="cyber-load-more-button">
+                    <span class="cyber-button-text">查看 {{ year_month.name }} 的全部 {{ year_month.items.size }} 篇文章</span>
+                    <i class="cyber-button-icon">→</i>
+                </a>
+            </div>
+            {% endif %}
+        </section>
+        {% endfor %}
+    </div>
+    
+    <!-- 科技背景效果 -->
+    <div class="cyber-home-bg-effects">
+        <div class="cyber-grid"></div>
+        <div class="cyber-particles">
+            <div class="cyber-particle"></div>
+            <div class="cyber-particle"></div>
+            <div class="cyber-particle"></div>
+        </div>
+    </div>
 </div>
 
-<!-- Apple Style Pager -->
+<!-- Cyber Style Pager -->
 {% if paginator.total_pages > 1 %}
-<div class="apple-pagination">
-    <ul class="pager">
+<div class="cyber-pagination">
+    <ul class="cyber-pager">
         {% if paginator.previous_page %}
-        <li class="previous">
+        <li class="cyber-previous">
             <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">← 更新文章</a>
         </li>
         {% endif %}
         {% if paginator.next_page %}
-        <li class="next">
+        <li class="cyber-next">
             <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">更早文章 →</a>
         </li>
         {% endif %}
     </ul>
 </div>
 {% endif %}
+
+<!-- 首页科技金属暗黑风格样式 -->
+<style>
+/* 首页科技金属暗黑风格主题 */
+.cyber-home-container {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    color: #e0e6ed;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+}
+
+/* 首页个人信息卡片模块 */
+.cyber-home-profile {
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+.cyber-profile-card-compact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    animation: cyber-glow 3s ease-in-out infinite alternate;
+    transition: all 0.3s ease;
+    max-width: 400px;
+}
+
+.cyber-profile-card-compact:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 30px rgba(0, 255, 255, 0.3),
+        inset 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* 小尺寸头像 */
+.cyber-avatar-wrapper-small {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.cyber-avatar-ring-small {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 90px;
+    height: 90px;
+    border: 2px solid transparent;
+    border-top: 2px solid #00ffff;
+    border-right: 2px solid #ff00ff;
+    border-radius: 50%;
+    animation: cyber-rotate 4s linear infinite;
+}
+
+.cyber-avatar-small {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.5),
+        inset 0 0 15px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cyber-avatar-small:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.8),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.cyber-status-indicator-small {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background: #00ff00;
+    border: 2px solid #0a0a0a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff00;
+    animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+/* 紧凑个人信息文字 */
+.cyber-profile-info-compact {
+    flex: 1;
+}
+
+.cyber-name-compact {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 5px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    animation: cyber-text-glow 3s ease-in-out infinite alternate;
+}
+
+.cyber-title-compact {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.cyber-status-compact {
+    font-size: 0.8rem;
+    color: #00ff00;
+    font-weight: 700;
+    text-shadow: 0 0 8px #00ff00;
+}
+
+/* 文章内容区域 */
+.cyber-blog-content {
+    padding: 0 20px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 月份标题区域 */
+.cyber-month-section {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.cyber-month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+    background: rgba(255, 0, 255, 0.05);
+    border-left: 5px solid #ff00ff;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.cyber-month-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cyber-view-all-button {
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.cyber-view-all-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    color: #000000;
+}
+
+/* 文章网格 */
+.cyber-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+/* 文章卡片 */
+.cyber-post-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-card-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: left 0.7s ease;
+    pointer-events: none;
+}
+
+.cyber-post-card:hover .cyber-card-glow {
+    left: 100%;
+}
+
+.cyber-post-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 255, 0.6);
+    box-shadow: 
+        0 15px 30px rgba(0, 255, 255, 0.2),
+        0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+.cyber-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cyber-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.cyber-post-date {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.cyber-post-category {
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ffff;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.cyber-post-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+.cyber-post-subtitle {
+    font-size: 1rem;
+    color: #ff00ff;
+    margin-bottom: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.cyber-post-excerpt {
+    font-size: 0.9rem;
+    color: #b0b6bd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.cyber-card-footer {
+    position: relative;
+    z-index: 1;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.cyber-read-more {
+    color: #00ffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.cyber-post-card:hover .cyber-read-more {
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+/* 加载更多按钮 */
+.cyber-month-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cyber-load-more-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 25px;
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cyber-load-more-button:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.cyber-button-icon {
+    transition: transform 0.2s ease;
+}
+
+.cyber-load-more-button:hover .cyber-button-icon {
+    transform: translateX(3px);
+}
+
+/* 分页 */
+.cyber-pagination {
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.cyber-pager {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cyber-pager li {
+    display: inline-block;
+}
+
+.cyber-pager a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 25px;
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cyber-pager a:hover {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* 背景效果 */
+.cyber-home-bg-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.cyber-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: cyber-grid-move 20s linear infinite;
+}
+
+.cyber-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cyber-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ffff;
+    animation: cyber-float 8s ease-in-out infinite;
+}
+
+.cyber-particle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.cyber-particle:nth-child(2) {
+    top: 70%;
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.cyber-particle:nth-child(3) {
+    top: 40%;
+    left: 60%;
+    animation-delay: 6s;
+}
+
+/* 动画效果 */
+@keyframes cyber-glow {
+    0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.1); }
+    100% { box-shadow: 0 0 40px rgba(0, 255, 255, 0.4), inset 0 0 40px rgba(0, 255, 255, 0.2); }
+}
+
+@keyframes cyber-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes cyber-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@keyframes cyber-text-glow {
+    0% { text-shadow: 0 0 15px rgba(0, 255, 255, 0.5); }
+    100% { text-shadow: 0 0 25px rgba(0, 255, 255, 0.8); }
+}
+
+@keyframes cyber-grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+@keyframes cyber-float {
+    0%, 100% { transform: translateY(0px); opacity: 0.5; }
+    50% { transform: translateY(-15px); opacity: 1; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .cyber-home-profile {
+        margin: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .cyber-profile-card-compact {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+        max-width: none;
+    }
+    
+    .cyber-name-compact {
+        font-size: 1.3rem;
+    }
+    
+    .cyber-blog-content {
+        padding: 0 15px 30px;
+    }
+    
+    .cyber-month-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .cyber-month-title {
+        font-size: 1.5rem;
+    }
+    
+    .cyber-posts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cyber-post-card {
+        padding: 20px;
+    }
+    
+    .cyber-pager {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* 覆盖原有样式 */
+.cyber-home-container .simple-blog-container {
+    background: transparent;
+    padding: 0;
+}
+
+.cyber-home-container .apple-home-wrapper {
+    background: transparent;
+}
+</style>

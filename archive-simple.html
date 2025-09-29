@@ -1,0 +1,585 @@
+---
+layout: default
+title: "文章归档"
+description: "按时间查看所有文章"
+---
+
+<!-- 按首页的方式分组文章 -->
+{% assign posts_by_year_month = site.posts | group_by_exp: "post", "post.date | date: '%Y年%m月'" %}
+
+<!-- 初始化目标变量 -->
+{% assign target_posts = nil %}
+{% assign target_year_month_name = "" %}
+
+<div class="apple-archive-hero">
+    <div class="apple-archive-hero-content">
+        <h1 class="apple-archive-title">{{ target_year_month_name }}文章</h1>
+        <p class="apple-archive-subtitle">{{ target_year_month_name }}发布的所有文章</p>
+        <div class="apple-archive-meta">
+            {% if target_posts %}
+                <span class="apple-archive-count">共 {{ target_posts.size }} 篇文章</span>
+            {% else %}
+                <span class="apple-archive-count">共 0 篇文章</span>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="apple-home-wrapper">
+    <div class="simple-blog-container">
+        <!-- 隐藏的所有年月数据，供JavaScript筛选使用 -->
+        <div style="display: none;" id="all-posts-data">
+            {% for year_month in posts_by_year_month %}
+            <section class="month-section" data-year-month="{{ year_month.name }}">
+                {% for post in year_month.items %}
+                <article class="simple-post-card" onclick="location.href='{{ post.url | prepend: site.baseurl }}'">
+                    <div class="card-content">
+                        <div class="post-meta">
+                            <span class="post-date">{{ post.date | date: "%m.%d" }}</span>
+                            {% if post.tags.size > 0 %}
+                            <span class="post-category">{{ post.tags[0] }}</span>
+                            {% endif %}
+                        </div>
+                        
+                        <h3 class="post-title">{{ post.title }}</h3>
+                        
+                        {% if post.subtitle %}
+                        <p class="post-subtitle">{{ post.subtitle }}</p>
+                        {% endif %}
+                        
+                        <div class="post-excerpt">
+                            {% if post.excerpt %}
+                                {{ post.excerpt | strip_html | truncate: 100 }}
+                            {% else %}
+                                {{ post.content | strip_html | truncate: 100 }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <span class="read-more">阅读文章 →</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </section>
+            {% endfor %}
+        </div>
+        
+        <!-- 瀑布流布局显示过滤后的文章 -->
+        <div class="waterfall-container">
+            <div class="waterfall-columns">
+                <!-- JavaScript会填充这里的内容 -->
+            </div>
+        </div>
+        
+        <!-- Empty State（当没有文章时显示） -->
+        <div class="apple-empty-state" style="display: none;">
+            <h3>暂无文章</h3>
+            <p id="empty-state-message">还没有发布任何文章</p>
+            <a href="{{ site.baseurl }}/" class="apple-nav-button">返回首页</a>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="apple-archive-navigation">
+            <a href="{{ site.baseurl }}/" class="apple-nav-button apple-nav-back">
+                <i class="apple-icon">←</i>
+                <span>返回首页</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+// URL参数处理和文章过滤
+(function() {
+    'use strict';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取URL参数
+        const params = new URLSearchParams(window.location.search);
+        const year = params.get('year');
+        const month = params.get('month');
+        
+        if (!year || !month) {
+            // 如果没有参数，重定向到首页
+            window.location.href = "{{ site.baseurl }}/";
+            return;
+        }
+        
+        // 生成目标年月字符串
+        const paddedMonth = month.padStart(2, '0');
+        const targetYearMonth = `${year}年${paddedMonth}月`;
+        
+        // 更新页面标题
+        const monthNames = ['', '一月', '二月', '三月', '四月', '五月', '六月', 
+                           '七月', '八月', '九月', '十月', '十一月', '十二月'];
+        const monthName = monthNames[parseInt(month)];
+        
+        const title = document.querySelector('.apple-archive-title');
+        const subtitle = document.querySelector('.apple-archive-subtitle');
+        if (title) title.textContent = `${year}年${monthName}文章`;
+        if (subtitle) subtitle.textContent = `${year}年${monthName}发布的所有文章`;
+        
+        // 过滤并显示文章
+        filterAndDisplayPosts(targetYearMonth);
+    });
+    
+    function filterAndDisplayPosts(targetYearMonth) {
+        // 从隐藏的Jekyll渲染数据中查找匹配的年月组
+        const allPostsData = document.getElementById('all-posts-data');
+        const monthSections = allPostsData.querySelectorAll('.month-section');
+        let targetPosts = [];
+        
+        monthSections.forEach(section => {
+            const yearMonth = section.getAttribute('data-year-month');
+            if (yearMonth === targetYearMonth) {
+                const posts = section.querySelectorAll('.simple-post-card');
+                targetPosts = Array.from(posts);
+            }
+        });
+        
+        // 显示过滤的文章
+        const waterfallContainer = document.querySelector('.waterfall-columns');
+        const countSpan = document.querySelector('.apple-archive-count');
+        const emptyState = document.querySelector('.apple-empty-state');
+        
+        if (targetPosts.length > 0) {
+            // 创建瀑布流布局
+            createWaterfallLayout(targetPosts, waterfallContainer);
+            
+            if (countSpan) {
+                countSpan.textContent = `共 ${targetPosts.length} 篇文章`;
+            }
+            
+            // 隐藏空状态
+            if (emptyState) {
+                emptyState.style.display = 'none';
+            }
+        } else {
+            // 显示空状态
+            waterfallContainer.innerHTML = '';
+            if (countSpan) {
+                countSpan.textContent = '共 0 篇文章';
+            }
+            
+            // 显示空状态
+            if (emptyState) {
+                const message = emptyState.querySelector('#empty-state-message');
+                if (message) {
+                    message.textContent = `${targetYearMonth}还没有发布任何文章`;
+                }
+                emptyState.style.display = 'block';
+            }
+        }
+    }
+    
+    function createWaterfallLayout(posts, container) {
+        // 清空容器
+        container.innerHTML = '';
+        
+        // 创建列数（响应式）
+        const getColumnCount = () => {
+            const width = window.innerWidth;
+            if (width >= 1200) return 3;
+            if (width >= 768) return 2;
+            return 1;
+        };
+        
+        const columnCount = getColumnCount();
+        const columns = [];
+        
+        // 创建列
+        for (let i = 0; i < columnCount; i++) {
+            const column = document.createElement('div');
+            column.className = 'waterfall-column';
+            columns.push(column);
+            container.appendChild(column);
+        }
+        
+        // 分配文章到列中（平衡高度）
+        posts.forEach((post, index) => {
+            const clonedPost = post.cloneNode(true);
+            
+            // 添加瀑布流卡片样式
+            clonedPost.classList.remove('simple-post-card');
+            clonedPost.classList.add('waterfall-card');
+            
+            // 添加苹果风格的额外元素
+            enhanceCardForWaterfall(clonedPost);
+            
+            // 简单的轮询分配（也可以根据高度智能分配）
+            const targetColumn = columns[index % columnCount];
+            targetColumn.appendChild(clonedPost);
+        });
+        
+        // 添加窗口大小变化监听
+        window.addEventListener('resize', () => {
+            const newColumnCount = getColumnCount();
+            if (newColumnCount !== columnCount) {
+                createWaterfallLayout(posts, container);
+            }
+        });
+    }
+    
+    function enhanceCardForWaterfall(card) {
+        // 添加苹果风格的渐变背景
+        const cardContent = card.querySelector('.card-content');
+        if (cardContent) {
+            cardContent.classList.add('waterfall-content');
+        }
+        
+        // 为卡片添加随机高度变化（更自然的瀑布流效果）
+        const randomPadding = Math.floor(Math.random() * 20) + 10;
+        card.style.setProperty('--random-padding', randomPadding + 'px');
+        
+        // 添加悬停效果
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    }
+})();
+</script>
+
+<style>
+/* Archive Hero Section */
+.apple-archive-hero {
+    padding: 80px 20px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.apple-archive-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.apple-archive-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+}
+
+.apple-archive-subtitle {
+    font-size: 1.1rem;
+    color: #515154;
+    margin-bottom: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.apple-archive-meta {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.apple-archive-count {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #374151;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 瀑布流布局样式 */
+.waterfall-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.waterfall-columns {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.waterfall-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 瀑布流卡片样式 */
+.waterfall-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: var(--random-padding, 16px);
+    break-inside: avoid;
+}
+
+.waterfall-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 113, 227, 0.3);
+}
+
+.waterfall-card:hover::before {
+    opacity: 1;
+}
+
+.waterfall-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.waterfall-card .card-content {
+    padding: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.waterfall-content {
+    background: transparent;
+}
+
+.waterfall-card .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.waterfall-card .post-date {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.waterfall-card .post-category {
+    background: rgba(255, 255, 255, 0.8);
+    color: #374151;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.waterfall-card .post-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.waterfall-card .post-subtitle {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.waterfall-card .post-excerpt {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.waterfall-card .card-footer {
+    padding: 0 24px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.waterfall-card .read-more {
+    display: inline-flex;
+    align-items: center;
+    color: #0071e3;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.waterfall-card:hover .read-more {
+    color: #0056b3;
+    transform: translateX(4px);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .waterfall-columns {
+        gap: 16px;
+    }
+    
+    .waterfall-column {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .waterfall-container {
+        padding: 16px;
+    }
+    
+    .waterfall-columns {
+        gap: 12px;
+    }
+    
+    .waterfall-column {
+        gap: 12px;
+    }
+    
+    .waterfall-card .card-content {
+        padding: 20px;
+    }
+    
+    .waterfall-card .post-title {
+        font-size: 1.1rem;
+    }
+    
+    .waterfall-card .card-footer {
+        padding: 0 20px 16px;
+    }
+}
+
+/* Loading State */
+.apple-loading-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.apple-loader {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #f3f4f6;
+    border-top: 2px solid #0071e3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.apple-loading-state p {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Empty State */
+.apple-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.apple-empty-state h3 {
+    font-size: 1.3rem;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.apple-empty-state p {
+    color: #9ca3af;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Navigation */
+.apple-archive-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+.apple-nav-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 12px;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.apple-nav-button:hover {
+    background: #0071e3;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+}
+
+.apple-icon {
+    font-style: normal;
+    font-size: 0.8rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .apple-archive-hero {
+        padding: 60px 16px 30px;
+    }
+    
+    .apple-archive-title {
+        font-size: 2rem;
+    }
+    
+    .apple-archive-subtitle {
+        font-size: 1rem;
+    }
+    
+    .apple-empty-state {
+        margin: 0 16px;
+    }
+}
+</style>
