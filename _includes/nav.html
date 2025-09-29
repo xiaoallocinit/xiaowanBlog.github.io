@@ -14,108 +14,10 @@
                 <li class="apple-nav-item">
                     <a href="{{ site.baseurl }}/" class="apple-nav-link">主页</a>
                 </li>
-                <li class="apple-nav-item">
-                    <a href="{{ site.baseurl }}/about/" class="apple-nav-link">关于我</a>
-                </li>
             </ul>
-        </div>
-
-        <!-- Mobile Menu Toggle -->
-        <div class="apple-mobile-toggle" id="apple-mobile-toggle">
-            <span class="apple-toggle-line"></span>
-            <span class="apple-toggle-line"></span>
-            <span class="apple-toggle-line"></span>
         </div>
     </div>
 </nav>
 <script>
-    // Apple Style Navigation JavaScript
-    document.addEventListener('DOMContentLoaded', function() {
-        const appleNavbar = document.getElementById('apple-navbar');
-        const mobileToggle = document.getElementById('apple-mobile-toggle');
-        const navMenu = document.getElementById('apple-nav-menu');
-        
-        // Mobile menu toggle functionality
-        let isMenuOpen = false;
-        
-        if (mobileToggle) {
-            mobileToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                isMenuOpen = !isMenuOpen;
-                
-                if (isMenuOpen) {
-                    navMenu.classList.add('apple-nav-menu-open');
-                    mobileToggle.classList.add('apple-toggle-active');
-                    document.body.classList.add('apple-nav-body-lock');
-                } else {
-                    navMenu.classList.remove('apple-nav-menu-open');
-                    mobileToggle.classList.remove('apple-toggle-active');
-                    document.body.classList.remove('apple-nav-body-lock');
-                }
-            });
-        }
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (isMenuOpen && !appleNavbar.contains(e.target)) {
-                navMenu.classList.remove('apple-nav-menu-open');
-                mobileToggle.classList.remove('apple-toggle-active');
-                document.body.classList.remove('apple-nav-body-lock');
-                isMenuOpen = false;
-            }
-        });
-        
-        // Close menu when clicking nav links (mobile)
-        const navLinks = document.querySelectorAll('.apple-nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    navMenu.classList.remove('apple-nav-menu-open');
-                    mobileToggle.classList.remove('apple-toggle-active');
-                    document.body.classList.remove('apple-nav-body-lock');
-                    isMenuOpen = false;
-                }
-            });
-        });
-        
-        // Navbar scroll behavior
-        let lastScrollTop = 0;
-        let scrollThreshold = 10;
-        
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Add/remove scrolled class for backdrop effect
-            if (scrollTop > 50) {
-                appleNavbar.classList.add('apple-navbar-scrolled');
-            } else {
-                appleNavbar.classList.remove('apple-navbar-scrolled');
-            }
-            
-            // Auto-hide navbar on scroll down (optional)
-            if (Math.abs(lastScrollTop - scrollTop) <= scrollThreshold) return;
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down
-                appleNavbar.classList.add('apple-navbar-hidden');
-            } else {
-                // Scrolling up
-                appleNavbar.classList.remove('apple-navbar-hidden');
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && isMenuOpen) {
-                navMenu.classList.remove('apple-nav-menu-open');
-                mobileToggle.classList.remove('apple-toggle-active');
-                document.body.classList.remove('apple-nav-body-lock');
-                isMenuOpen = false;
-            }
-        });
-    });
+
 </script>
