@@ -95,7 +95,11 @@ npm --version
 git clone https://github.com/xiaoallocinit/xiaowanBlog.git
 cd xiaowanBlog
 
-# 2. 运行启动脚本（推荐）
+# 2. 安装依赖
+bundle install
+npm install
+
+# 3. 运行启动脚本（推荐）
 ./start.sh
 ```
 
@@ -203,11 +207,42 @@ xiaowanBlog/
 
 ---
 
+## 📈 更新日志
+
+### 2025-10-24
+- 添加了新的文章《1024，程序员节日》
+- 更新了部分样式细节
+
+### 2024-09-08
+- 重构了项目结构
+- 优化了 Apple 风格设计
+- 增强了移动端适配
+
+### 2024-08-15
+- 初始版本发布
+- 基础功能实现
+
+---
+
 ## 📧 联系我
 
 如果你对投资、技术或是生活有什么想法，欢迎与我交流探讨！
 
 - **GitHub**: [@xiaoallocinit](https://github.com/xiaoallocinit)
+- **Email**: xiao2683@qq.com
+
+---
+
+## 🤝 贡献
+
+欢迎提交 Issue 或 Pull Request 来帮助改进这个项目。
+
+### 贡献步骤
+1. Fork 本仓库
+2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
 
 ---
 
